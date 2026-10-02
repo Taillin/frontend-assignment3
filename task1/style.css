@@ -1,0 +1,43 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.body {
+  background-color: #722f37;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  padding: 40px;
+  color: #2c2c2c;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.box1 { background: #f5ebe6 }
+.box2 { background: #e8d7ce; }
+.box3 { background: #ffffff; }
+
+/* 1. Мобилка: все по 100% (друг под другом) */
+.box {
+  width: 100%;
+}
+
+/* 2. Планшет: первые два делят строку по 50%, третий на всю ширину */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .box1, .box2 { width: calc(50% - 5px); }
+  .box3 { width: 100%; }
+}
+
+/* 3. Десктоп: все 3 в одну строку */
+@media (min-width: 1024px) {
+  .box { width: calc((100% - 20px) / 3); }
+}
